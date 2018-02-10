@@ -37,6 +37,10 @@ class TestJob implements ShouldQueue
     {
         $client = new Client;
 
+        if (mt_rand(1, 10) <= 2) {
+            throw new Exception('Exception error');
+        }
+
         $client->get(route('test'));
 
         sleep(mt_rand(60, 90));

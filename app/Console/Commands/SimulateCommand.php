@@ -57,7 +57,7 @@ class SimulateCommand extends Command
     {
         $content = app('files')->get(app_path('Jobs/TestJob.php'));
 
-        $lineToChange = explode("\n", $content)[55];
+        $lineToChange = explode("\n", $content)[59];
         $newLine = sprintf('        $key = "%s";', $key);
 
         app('files')->put(app_path('Jobs/TestJob.php'), str_replace($lineToChange, $newLine, $content));
