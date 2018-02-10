@@ -90,7 +90,7 @@ return [
                 'connection' => 'redis',
                 'queue' => ['test'],
                 'balance' => false,
-                'processes' => 3,
+                'processes' => 5,
                 'tries' => 1,
             ],
         ],
