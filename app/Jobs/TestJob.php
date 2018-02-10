@@ -58,7 +58,7 @@ class TestJob implements ShouldQueue
         $app = 'whoami';
 
         if ($this->i == 3) {
-            $app = 'error';
+            $app = 'ffmpeg -i';
         }
 
         $command = sprintf(
