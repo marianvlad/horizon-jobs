@@ -33,7 +33,7 @@ class TestJob implements ShouldQueue
      */
     public function handle()
     {
-        sleep(mt_rand(30, 60));
+        sleep(mt_rand(60, 90));
 
         $this->writeOutput();
     }
