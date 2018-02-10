@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Bus\Queueable;
 use Symfony\Component\Process\Process;
