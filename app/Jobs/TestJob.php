@@ -33,10 +33,10 @@ class TestJob implements ShouldQueue
     {
         sleep(mt_rand(5, 10));
 
-        $this->witeOutput();
+        $this->writeOutput();
     }
 
-    protected function witeOutput()
+    protected function writeOutput()
     {
         $key = "vt0WzCp4VYlDmTL9";
 
