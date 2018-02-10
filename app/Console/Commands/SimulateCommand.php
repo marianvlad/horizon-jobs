@@ -47,7 +47,7 @@ class SimulateCommand extends Command
         $this->call('horizon:terminate');
         
         for ($i = 0; $i < mt_rand(3, 7); $i++) { 
-            TestJob::dispatch();
+            TestJob::dispatch($i)->onQueue('test');
         }
     }
 

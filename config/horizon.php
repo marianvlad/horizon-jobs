@@ -79,6 +79,20 @@ return [
                 'processes' => 3,
                 'tries' => 1,
             ],
+            'supervisor-2' => [
+                'connection' => 'redis',
+                'queue' => ['another-test'],
+                'balance' => false,
+                'processes' => 3,
+                'tries' => 1,
+            ],
+            'supervisor-3' => [
+                'connection' => 'redis',
+                'queue' => ['test'],
+                'balance' => false,
+                'processes' => 3,
+                'tries' => 1,
+            ],
         ],
 
         'local' => [

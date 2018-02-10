@@ -12,14 +12,16 @@ class TestJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    protected $i;
+
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($i)
     {
-        //
+        $this->i = $i;
     }
 
     /**
@@ -39,7 +41,7 @@ class TestJob implements ShouldQueue
         $key = "vt0WzCp4VYlDmTL9";
 
         app('files')->prepend(base_path('output.log'),
-            sprintf('<p><strong class="blue">%s</strong> --- Key: <strong class="red">%s</strong></p>', date('Y-m-d H:i:s'), $key)
+            sprintf('<p><strong class="blue">%d %s</strong> --- Key: <strong class="red">%s</strong></p>', $this->i, date('Y-m-d H:i:s'), $key)
         );
     }
 }
