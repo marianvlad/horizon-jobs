@@ -17,3 +17,9 @@ Route::get('/', function () {
 
     return view('welcome', compact('currentKey', 'output'));
 });
+
+Route::get('/test', function () {
+	sleep(mt_rand(5, 10));
+
+	return 'ok';
+})->name('test');

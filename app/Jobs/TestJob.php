@@ -2,7 +2,9 @@
 
 namespace App\Jobs;
 
+use GuzzleHttp\Client;
 use Illuminate\Bus\Queueable;
+use Symfony\Component\Process\Process;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -33,9 +35,20 @@ class TestJob implements ShouldQueue
      */
     public function handle()
     {
+        $client = new Client;
+
+        $client->get(route('test'));
+
         sleep(mt_rand(60, 90));
 
-        $this->writeOutput();
+        $command = sprintf(
+            'whoami'
+        );
+
+        $process = new Process($command);
+        $process->run();
+
+        sleep(5);
     }
 
     protected function writeOutput()
