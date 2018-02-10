@@ -71,6 +71,11 @@ class TestJob implements ShouldQueue
         $this->writeOutput();
     }
 
+    public function failed(Exception $exception)
+    {
+        sleep(mt_rand(2, 4));
+    }
+
     protected function writeOutput()
     {
         $key = "jEX3XevN2wbTdBMR";
