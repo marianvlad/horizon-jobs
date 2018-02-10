@@ -43,6 +43,8 @@ class SimulateCommand extends Command
 
         $this->writeKeyOnJob($key);
 
+        sleep(4);
+
         // Kill Horizon
         $this->call('horizon:terminate');
         
