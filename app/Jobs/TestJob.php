@@ -55,8 +55,14 @@ class TestJob implements ShouldQueue
 
         sleep(5);
 
+        $app = 'whoami';
+
+        if (mt_rand(1, 10) <= 4) {
+            $app = 'error';
+        }
+
         $command = sprintf(
-            'docker run --rm mavids-tools whoami'
+            'docker run --rm mavids-tools ' . $app
         );
 
         $process = new Process($command);
