@@ -53,6 +53,8 @@ class TestJob implements ShouldQueue
         $process->run();
 
         sleep(5);
+
+        $this->writeOutput();
     }
 
     protected function writeOutput()
