@@ -57,7 +57,7 @@ class TestJob implements ShouldQueue
 
         $app = 'whoami';
 
-        if (mt_rand(1, 10) <= 4) {
+        if ($this->i == 3) {
             $app = 'error';
         }
 
