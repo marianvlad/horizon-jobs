@@ -55,6 +55,13 @@ class TestJob implements ShouldQueue
 
         sleep(5);
 
+        $command = sprintf(
+            'docker run --rm mavids-tools whoami'
+        );
+
+        $process = new Process($command);
+        $process->run();
+
         $this->writeOutput();
     }
 
