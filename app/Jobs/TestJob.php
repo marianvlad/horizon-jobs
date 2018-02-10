@@ -14,6 +14,8 @@ class TestJob implements ShouldQueue
 
     protected $i;
 
+    public $timeout = 3600;
+
     /**
      * Create a new job instance.
      *
@@ -31,14 +33,14 @@ class TestJob implements ShouldQueue
      */
     public function handle()
     {
-        sleep(mt_rand(5, 10));
+        sleep(mt_rand(30, 60));
 
         $this->writeOutput();
     }
 
     protected function writeOutput()
     {
-        $key = "vt0WzCp4VYlDmTL9";
+        $key = "jEX3XevN2wbTdBMR";
 
         app('files')->prepend(base_path('output.log'),
             sprintf('<p><strong class="blue">%d %s</strong> --- Key: <strong class="red">%s</strong></p>', $this->i, date('Y-m-d H:i:s'), $key)
