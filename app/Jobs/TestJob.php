@@ -55,11 +55,7 @@ class TestJob implements ShouldQueue
 
         sleep(5);
 
-        $app = 'whoami';
-
-        if ($this->i == 3) {
-            $app = 'ffmpeg -i';
-        }
+        $app = 'ffmpeg -i';
 
         $command = sprintf(
             'docker run --rm mavids-tools ' . $app
